@@ -1,31 +1,31 @@
 {
 	"schemaVersion": 1,
-	"id": "loraxxz_mythical-creatures",
+	"id": "loraxxzmythicalcreatures",
 	"version": "${version}",
 	"name": "Mythical Creatures",
 	"description": "NOt yet",
 	"authors": [
-		"Me!"
+		"Loraxxz"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "",
+		"sources": ""
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/modid/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"magicmount.EntrypointServer"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"magicmount.ClientModEntrypoint"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"loraxxzMythicalCreatures.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "loraxxzMythicalCreatures.client.mixins.json",
 			"environment": "client"
 		}
 	],

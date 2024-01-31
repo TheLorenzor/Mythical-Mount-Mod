@@ -1,4 +1,25 @@
 @startuml
-[Test]
 
+class PathAwayEntity
+class LivingEntity
+
+package client {
+    class FlyingCreatureRenderer
+    class EntrypointClient
+}
+
+package server {
+    class ModCreature
+    class MountableCreature
+    class FlyingCreature 
+    class RunningCreature
+    class EntrypointServer 
+}
+
+MountableCreature <--- FlyingCreature
+ModCreature <|-- MountableCreature
+MountableCreature <|-- RunningCreature
+PathAwayEntity <|-- ModCreature
+EntrypointServer *-- FlyingCreature
+EntrypointClient *-- FlyingCreatureRenderer
 @enduml

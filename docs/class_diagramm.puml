@@ -13,7 +13,8 @@ package server {
     class MountableCreature
     class FlyingCreature 
     class RunningCreature
-    class EntrypointServer 
+    class EntrypointServer
+    class Dragon
 }
 
 MountableCreature <--- FlyingCreature
@@ -22,4 +23,5 @@ MountableCreature <|-- RunningCreature
 PathAwayEntity <|-- ModCreature
 EntrypointServer *-- FlyingCreature
 EntrypointClient *-- FlyingCreatureRenderer
+FlyingCreature <|-- Dragon
 @enduml

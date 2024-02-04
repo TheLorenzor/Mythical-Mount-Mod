@@ -3,7 +3,6 @@
 	"package": "",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"magicmount.mixin.ClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

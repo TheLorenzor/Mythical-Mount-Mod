@@ -12,4 +12,7 @@ FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createMobAttributes());
 - Entity Render
   - Auf Clientseite --> verwaltet wie die Entität angezeigt wird --> enthält Model und Textur
 - Client initializer --> erstellt und registriert die entitäten 
-- 
+
+
+
+https://www.youtube.com/watch?v=wgVnkqqBGFs

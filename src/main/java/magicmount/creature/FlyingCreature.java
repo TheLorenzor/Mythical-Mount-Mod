@@ -6,8 +6,9 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.world.World;
 
-public class FlyingCreature extends FlyingEntity {
-    protected FlyingCreature(EntityType<? extends MobEntity> entityType, World world) {
-        super((EntityType<? extends FlyingEntity>) entityType, world);
+abstract public class FlyingCreature extends FlyingEntity{
+
+    public FlyingCreature(EntityType<? extends FlyingEntity> entityType, World world) {
+        super(entityType, world);
     }
 }

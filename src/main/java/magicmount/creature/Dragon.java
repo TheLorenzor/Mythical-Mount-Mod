@@ -30,13 +30,6 @@ public class Dragon extends FlyingCreature {
         this.getWorld().getProfiler().pop();
     }
 
-    class MineResourcesGoal extends Goal {
-
-        @Override
-        public boolean canStart() {
-            return false;
-        }
-    }
 
 
 }

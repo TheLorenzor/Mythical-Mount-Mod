@@ -3,10 +3,7 @@ package magicmount.creature;
 import magicmount.SittingStates;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.mob.FlyingEntity;
-import net.minecraft.entity.mob.GhastEntity;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.mob.*;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -18,12 +15,29 @@ abstract public class FlyingCreature extends FlyingEntity{
         super(entityType, world);
     }
 
-    class FlyingRandomGoal extends Goal {
-
-        @Override
-        public boolean canStart() {
-            return !FlyingCreature.this.is_domesticated;
-        }
+    @Override
+    protected void initGoals() {
+        this.goalSelector.add(3,new FlyingRandomGoal());
     }
 
+    private class FlyingRandomGoal extends Goal {
+        Vec3d originalPosition = Vec3d.ZERO;
+        private float radius;
+        @Override
+        public boolean canStart() {
+            return !FlyingCreature.this.is_domesticated && FlyingCreature.this.current_state == SittingStates.FLYING;
+        }
+
+        @Override
+        public void start() {
+            // Remembers on start the current location and then establishes a Radius in which  the dragon flies randomly
+            originalPosition = FlyingCreature.this.getPos();
+            this.radius = FlyingCreature.this.random.nextFloat() * 10.0f;
+        }
+
+        @Override
+        public void tick() {
+
+        }
+    }
 }

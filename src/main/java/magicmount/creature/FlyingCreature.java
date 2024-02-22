@@ -72,8 +72,6 @@ abstract public class FlyingCreature extends FlyingEntity {
                 }
 
             }
-
-
         }
     }
 }

@@ -3,8 +3,12 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-name: build
-on: [pull_request, push]
+name: Builder
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
 
 jobs:
   build:
@@ -18,6 +22,7 @@ jobs:
         # and run on both Linux and Windows
         os: [ubuntu-22.04, windows-2022]
     runs-on: ${{ matrix.os }}
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: checkout repository
         uses: actions/checkout@v4

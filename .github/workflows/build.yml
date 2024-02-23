@@ -37,6 +37,3 @@ jobs:
         run: chmod +x ./gradlew
       - name: build
         run: ./gradlew build
-
-  tests:
-    runs-on: ubuntu-22.04

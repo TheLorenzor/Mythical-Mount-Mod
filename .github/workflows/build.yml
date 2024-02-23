@@ -3,8 +3,12 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-name: build
-on: [pull_request, push]
+name: MythicModBuilder
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
 
 jobs:
   build:
@@ -20,7 +24,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
       - name: validate gradle wrapper
         uses: gradle/wrapper-validation-action@v1
       - name: setup jdk ${{ matrix.java }}
@@ -33,9 +37,3 @@ jobs:
         run: chmod +x ./gradlew
       - name: build
         run: ./gradlew build
-      - name: capture build artifacts
-        if: ${{ runner.os == 'Linux' && matrix.java == '21' }} # Only upload artifacts built from latest java on one OS
-        uses: actions/upload-artifact@v3
-        with:
-          name: Artifacts
-          path: build/libs/

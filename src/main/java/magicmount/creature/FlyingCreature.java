@@ -70,7 +70,6 @@ abstract public class FlyingCreature extends FlyingEntity {
                 if (vectorBackinRing.length() > this.radius) {
                     this.isOutOfBounce = true;
                 }
-
             }
         }
     }

@@ -1,5 +1,6 @@
 package magicmount.creature;
 
+import magicmount.SittingStates;
 import net.minecraft.entity.Attackable;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -22,7 +23,6 @@ public class Dragon extends FlyingCreature {
         this.experiencePoints = 5000;
 
     }
-
     @Override
     protected void initGoals() {
         this.goalSelector.add(5,new AttackPlayerGoal(this));
@@ -40,8 +40,9 @@ public class Dragon extends FlyingCreature {
         this.getWorld().getProfiler().pop();
     }
 
-    protected void breathFire() {
-
+    protected void goingToSleep() {
+        this.current_state = SittingStates.SLEEPING;
+        
     }
 
     public class AttackPlayerGoal extends Goal {
@@ -60,9 +61,8 @@ public class Dragon extends FlyingCreature {
         public void tick() {
             World world = this.dragon.getWorld();
 
-            FireballEntity fireballEntity = new FireballEntity(world,(LivingEntity) this.dragon,3,3,3,1);
+            FireballEntity fireballEntity = new FireballEntity(world,(LivingEntity) this.dragon,0,0,-3,1);
             fireballEntity.setPosition(this.dragon.getPos().add(2,2,2));
-            System.out.println("TEST");
             world.spawnEntity(fireballEntity);
 
         }

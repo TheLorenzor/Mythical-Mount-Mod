@@ -13,9 +13,11 @@ import net.minecraft.util.Identifier;
 
 public class EntrypointServer implements ModInitializer {
 
+
+    public static final String MYTHIC_MOD_ID = "magical-mount";
     public static final EntityType<Dragon> DRAGON = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier("magical-mount","dragon"),
+            new Identifier(MYTHIC_MOD_ID,"dragon"),
             FabricEntityTypeBuilder.Mob.create(SpawnGroup.CREATURE,Dragon::new).dimensions(Dragon.getDimension()).build()
     );
 

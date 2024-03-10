@@ -39,7 +39,6 @@ abstract public class FlyingCreature extends FlyingEntity {
             originalPosition = FlyingCreature.this.getPos();
             Vec3d test1 = new Vec3d(1, 1, 1);
             Vec3d test2 = new Vec3d(0, 1, 0);
-            System.out.println(test1.subtract(test2));
         }
 
         @Override

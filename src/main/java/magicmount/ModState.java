@@ -44,10 +44,18 @@ public class ModState extends PersistentState {
         // save all Server States
         NbtCompound modState = new NbtCompound();
         NbtCompound locations = new NbtCompound();
-
+        this.startLocations.forEach((key,vector) -> {
+            locations.putByteArray(key.toString(),this.convertVecToByte(vector));
+        });
         nbt.put(MYTHIC_MOD_ID,modState);
         return null;
     }
+
+    private byte[] convertVecToByte(Vec3d vector) {
+        String byteString = String.valueOf(vector.x) +','+ vector.y + ',' + vector.z;
+        return null;
+    }
+
 
     // get the public mod state
     public static ModState getModState(MinecraftServer server) {

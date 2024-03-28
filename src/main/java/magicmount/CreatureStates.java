@@ -1,6 +1,6 @@
 package magicmount;
 
-public enum SittingStates {
+public enum CreatureStates {
     SITTING,
     SLEEPING,
     FLYING;

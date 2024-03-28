@@ -1,7 +1,6 @@
 package magicmount.creature;
 
-import magicmount.SittingStates;
-import net.fabricmc.loader.impl.lib.sat4j.core.Vec;
+import magicmount.CreatureStates;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.*;
@@ -12,7 +11,7 @@ import net.minecraft.world.World;
 abstract public class FlyingCreature extends FlyingEntity {
 
     protected boolean is_domesticated = false;
-    protected SittingStates current_state = SittingStates.FLYING;
+    protected CreatureStates current_state = CreatureStates.SLEEPING;
 
     public FlyingCreature(EntityType<? extends FlyingEntity> entityType, World world) {
         super(entityType, world);
@@ -30,15 +29,14 @@ abstract public class FlyingCreature extends FlyingEntity {
 
         @Override
         public boolean canStart() {
-            return !FlyingCreature.this.is_domesticated && FlyingCreature.this.current_state == SittingStates.FLYING;
+            System.out.println(!FlyingCreature.this.is_domesticated && FlyingCreature.this.current_state == CreatureStates.FLYING);
+            return !FlyingCreature.this.is_domesticated && FlyingCreature.this.current_state == CreatureStates.FLYING;
         }
 
         @Override
         public void start() {
             // Remembers on start the current location and then establishes a Radius in which  the dragon flies randomly
             originalPosition = FlyingCreature.this.getPos();
-            Vec3d test1 = new Vec3d(1, 1, 1);
-            Vec3d test2 = new Vec3d(0, 1, 0);
         }
 
         @Override

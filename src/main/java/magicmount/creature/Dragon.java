@@ -50,11 +50,15 @@ public class Dragon extends FlyingCreature {
 
     @Override
     public void tick() {
-        super.tick();
-        if (this.random.nextInt(20000) == 69 && !test) {
-            this.setVelocity(0,0,1);
+        if (this.random.nextInt(1000) == 69 || test) {
+            if (!test) {
+                System.out.println("TEST START");
+            }
             test = true;
+
+            this.setVelocity(0,0,0.5d); //  vec of length 1 equals to 10 m/s for 1 sec
         }
+        super.tick();
 
         }
 

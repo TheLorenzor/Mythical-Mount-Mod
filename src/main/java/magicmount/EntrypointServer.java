@@ -14,7 +14,7 @@ public class EntrypointServer implements ModInitializer {
 
     public static final EntityType<Dragon> DRAGON_ENTITY_TYPE = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier("magical-mounts","dragon"),
+            Identifier.of("magical-mounts","dragon"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE,Dragon::new).dimensions(Dragon.getDimension()).build());
     @Override
     public void onInitialize() {

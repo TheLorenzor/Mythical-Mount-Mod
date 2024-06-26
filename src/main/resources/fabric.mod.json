@@ -1,41 +1,41 @@
 {
-	"schemaVersion": 1,
-	"id": "loraxxzmythicalcreatures",
-	"version": "${version}",
-	"name": "Mythical Creatures",
-	"description": "NOt yet",
-	"authors": [
-		"Loraxxz"
-	],
-	"contact": {
-		"homepage": "",
-		"sources": ""
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"magicmount.EntrypointServer"
-		],
-		"client": [
-			"magicmount.ClientModEntrypoint"
-		]
-	},
-	"mixins": [
-		"loraxxzMythicalCreatures.mixins.json",
-		{
-			"config": "loraxxzMythicalCreatures.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.15.0",
-		"minecraft": "~1.20.4",
-		"java": ">=17",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "loraxxzmythicalcreatures",
+  "version": "${version}",
+  "name": "Mythical Creatures",
+  "description": "NOt yet",
+  "authors": [
+    "Loraxxz"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/modid/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "magicmount.EntrypointServer"
+    ],
+    "client": [
+      "magicmount.ClientModEntrypoint"
+    ]
+  },
+  "mixins": [
+    "loraxxzMythicalCreatures.mixins.json",
+    {
+      "config": "loraxxzMythicalCreatures.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.21",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
 }

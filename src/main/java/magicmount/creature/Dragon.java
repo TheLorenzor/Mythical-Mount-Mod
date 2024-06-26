@@ -40,7 +40,7 @@ public class Dragon extends FlyingCreature {
     }
 
     public static EntityDimensions getDimension() {
-        return new EntityDimensions(1f, 1f, false);
+        return EntityDimensions.fixed(1f,1f);
     }
 
     protected void goingToSleep() {

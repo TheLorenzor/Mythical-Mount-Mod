@@ -1,19 +1,13 @@
 package magicmount.creature;
 
-import magicmount.ModState;
 import magicmount.CreatureStates;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.FlyingEntity;
 
-import net.minecraft.entity.mob.PhantomEntity;
-import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-
-import java.util.Random;
 
 public class Dragon extends FlyingCreature {
 
@@ -26,11 +20,6 @@ public class Dragon extends FlyingCreature {
         this.experiencePoints = 5000;
         // save the starting and spawning point because the dragon is supposed to
         // spawn in a castle and use it as a returning point
-        if (!world.isClient) {
-            var state = ModState.getModState(world.getServer());
-            state.updateOriginCoordinates(this.getPos(), this.uuid.toString());
-            this.startingPoint = this.getPos();
-        }
         this.current_state = CreatureStates.FLYING;
     }
 
@@ -107,16 +96,6 @@ public class Dragon extends FlyingCreature {
         @Override
         public boolean canStart() {
             return false;
-        }
-
-        @Override
-        public void tick() {
-            World world = this.dragon.getWorld();
-
-            FireballEntity fireballEntity = new FireballEntity(world, (LivingEntity) this.dragon, 0, 0, -3, 1);
-            fireballEntity.setPosition(this.dragon.getPos().add(2, 2, 2));
-            world.spawnEntity(fireballEntity);
-
         }
     }
 

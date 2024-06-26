@@ -6,7 +6,6 @@ public class PathExecution {
 
     private Vec3d[] splinePoints;
     private int index;
-    private int
 
     public PathExecution() {
         this.index =0 ;

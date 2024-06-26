@@ -23,7 +23,4 @@ public class EntrypointServer implements ModInitializer {
         FabricDefaultAttributeRegistry.register(DRAGON, Dragon.createMobAttributes());
     }
 
-    private static void createItem() {
-
-    }
 }

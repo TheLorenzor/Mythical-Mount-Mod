@@ -10,10 +10,12 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
+import static magicmount.EntrypointServer.MYTHIC_MOD_ID;
+
 @Environment(EnvType.CLIENT)
 public class ClientModEntrypoint implements ClientModInitializer {
 
-    public static final EntityModelLayer MODEL_DRAGON_LAYER = new EntityModelLayer(new Identifier("magical-mount","dragon"),"main");
+    public static final EntityModelLayer MODEL_DRAGON_LAYER = new EntityModelLayer(Identifier.of(MYTHIC_MOD_ID,"dragon"),"main");
     @Override
     public void onInitializeClient() {
         EntityRendererRegistry.INSTANCE.register(EntrypointServer.DRAGON, DragonRender::new);

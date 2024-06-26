@@ -8,12 +8,12 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
-abstract public class FlyingCreature extends FlyingEntity {
+abstract public class FlyingCreature extends PathAwareEntity {
 
     protected boolean is_domesticated = false;
     protected CreatureStates current_state = CreatureStates.SLEEPING;
 
-    public FlyingCreature(EntityType<? extends FlyingEntity> entityType, World world) {
+    public FlyingCreature(EntityType<? extends FlyingCreature> entityType, World world) {
         super(entityType, world);
     }
 

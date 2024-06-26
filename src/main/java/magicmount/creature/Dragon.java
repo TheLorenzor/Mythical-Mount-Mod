@@ -6,17 +6,16 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.FlyingEntity;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class Dragon extends FlyingCreature {
 
     private Vec3d startingPoint;
-    private boolean test;
 
-    public Dragon(EntityType<? extends FlyingEntity> entityType, World world) {
+    public Dragon(EntityType<? extends FlyingCreature> entityType, World world) {
         super(entityType, world);
-        this.test = false;
         this.experiencePoints = 5000;
         // save the starting and spawning point because the dragon is supposed to
         // spawn in a castle and use it as a returning point
@@ -36,21 +35,6 @@ public class Dragon extends FlyingCreature {
         this.current_state = CreatureStates.SLEEPING;
 
     }
-
-    @Override
-    public void tick() {
-        if (this.random.nextInt(1000) == 69 || test) {
-            if (!test) {
-                System.out.println("TEST START");
-            }
-            test = true;
-
-            this.setVelocity(0,0,0.5d); //  vec of length 1 equals to 10 m/s for 1 sec
-        }
-        super.tick();
-
-        }
-
     /**
      * This Goal is the default of the dragon --> it flies in the air for 20 Blocks and then
      * flows around the

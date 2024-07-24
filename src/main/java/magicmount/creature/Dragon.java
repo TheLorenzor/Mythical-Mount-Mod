@@ -21,12 +21,6 @@ public class Dragon extends FlyingCreature {
         // spawn in a castle and use it as a returning point
         this.current_state = CreatureStates.FLYING;
     }
-
-    @Override
-    protected void initGoals() {
-        this.goalSelector.add(6,new RoamAroundGoal(this));
-    }
-
     public static EntityDimensions getDimension() {
         return EntityDimensions.fixed(1f,1f);
     }
@@ -39,48 +33,6 @@ public class Dragon extends FlyingCreature {
      * This Goal is the default of the dragon --> it flies in the air for 20 Blocks and then
      * flows around the
     * */
-    public class RoamAroundGoal extends Goal {
 
-        private final Dragon dragon;
-        private Vec3d midPoint;
-        public RoamAroundGoal(Dragon dragon) {
-            this.dragon = dragon;
-        }
-
-        @Override
-        public boolean canStart() {
-            return !this.dragon.is_domesticated && this.dragon.current_state != CreatureStates.SLEEPING;
-        }
-
-        @Override
-        public void start() {
-            super.start();
-            this.dragon.current_state = CreatureStates.FLYING;
-            this.midPoint = this.dragon.getPos();
-            this.midPoint = this.midPoint.add(new Vec3d(0,20,0));
-        }
-
-        @Override
-        public void tick() {
-            if (this.dragon.getPos().z<this.midPoint.z) {
-
-            } else {
-
-            }
-        }
-    }
-
-    public class AttackPlayerGoal extends Goal {
-        private final Dragon dragon;
-
-        public AttackPlayerGoal(Dragon dragon) {
-            this.dragon = dragon;
-        }
-
-        @Override
-        public boolean canStart() {
-            return false;
-        }
-    }
 
 }

@@ -1,7 +1,7 @@
 package magicmount.renderer;
 
 import magicmount.ClientModEntrypoint;
-import magicmount.creature.Dragon;
+import magicmount.entity.dragon.Dragon;
 import magicmount.models.DragonModel;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;

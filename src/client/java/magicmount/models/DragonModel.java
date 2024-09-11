@@ -1,7 +1,7 @@
 package magicmount.models;
 
 import com.google.common.collect.ImmutableList;
-import magicmount.creature.Dragon;
+import magicmount.entity.dragon.Dragon;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;

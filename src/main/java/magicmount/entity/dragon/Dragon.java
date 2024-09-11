@@ -1,12 +1,10 @@
-package magicmount.creature;
+package magicmount.entity.dragon;
 
 import magicmount.CreatureStates;
+import magicmount.entity.FlyingCreature;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.mob.FlyingEntity;
 
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 

@@ -1,6 +1,7 @@
-package magicmount.creature;
+package magicmount.entity;
 
 import magicmount.CreatureStates;
+import magicmount.entity.dragon.Dragon;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.*;
